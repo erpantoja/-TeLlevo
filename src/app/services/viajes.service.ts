@@ -12,25 +12,25 @@ export class ViajesService {
   constructor( private http: HttpClient,) {
    }
    getAllViajes() {
-    const path = `${this.api}/viajes/`;
+    const path = `${this.api}`;
     return this.http.get<Viajes[]>(path).pipe(
       retry(3)
     );
   }
 
   getViaje(id: string) {
-    const path = `${this.api}/viajes/${id}`;
+    const path = `${this.api}${id}`;
     return this.http.get<Viajes>(path);
   }
 
   createViaje(viaje: Viajes) {
-    const path = `${this.api}/viajes`;
+    const path = `${this.api}`;
     return this.http.post(path, viaje).pipe(
       retry(3)
     );;
   }
   deleteViaje(id: string) {
-    const path = `${this.api}/viajes/${id}`;
+    const path = `${this.api}${id}`;
     return this.http.delete(path)
   }
 }
