@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Pasajero</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="background" scroll="true">
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Login</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <form [formGroup]="formularioLogin">
+                <ion-item>
+                    <ion-label position="floating">Nombre</ion-label>
+                    <ion-input formControlName="nombre" [(ngModel)]="dato"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Contraseña</ion-label>
+                    <ion-input formControlName="password" type="password"></ion-input>
+                </ion-item>
+            </form>
+            <br>
+            <ion-button (click)="pasa()" (click)="saludar()" (click)="ingresar()">
+                Ingresar
+            </ion-button>
+            <ion-button slot="end">
+                <ion-button (click)="registro() ">Registrarse</ion-button>
+            </ion-button>
+
+        </ion-card-content>
+    </ion-card>
+
+    <ion-button fill="clear" style="font-size: small; color: #ffffff; margin-right: -10px; text-transform: none; font-family: sans-serif;" (click)="olvi()">
+        <b><p style="font-size: 11px;">Olvido la contraseña? </p></b>
+    </ion-button>
+
+
+</ion-content>

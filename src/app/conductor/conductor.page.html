@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Conductor</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="background" scroll="true">
+    <center>
+        <ion-icon name="person"></ion-icon>
+        <h1>Bienvenido</h1>
+        <h1></h1>
+    </center>
+    <div id="map"></div>
+    <ion-list>
+        <div>
+            <ion-input [(ngModel)]="iniciov" type="text" placeholder="Indique el punto de comienzo" size=32></ion-input>
+            <ion-input [(ngModel)]="finalv" type="text" placeholder="Indique el termino" size=32></ion-input>
+        </div>
+        <mat-radio-group [(ngModel)]="asientos" name="asientos">
+            <h1>Disponibilidad de Asientos</h1>
+            <h1></h1>
+            <mat-radio-button value="1">1 </mat-radio-button>
+            <h1></h1>
+            <mat-radio-button value="2">2 </mat-radio-button>
+            <h1></h1>
+            <mat-radio-button value="3">3 </mat-radio-button>
+            <h1></h1>
+            <mat-radio-button value="4">4 </mat-radio-button>
+        </mat-radio-group>
+
+        <ion-input name="valorv" [(ngModel)]="costo" placeholder="Ingrese valor del viaje" type="text"></ion-input>
+        <center>
+            <ion-input name="horasa" [(ngModel)]="horasa" type="time">Ingrese la hora de salida: </ion-input>
+        </center>
+    </ion-list>
+    <ion-button (click)="showModal()" (click)="postViaje()"></ion-button>
+
+
+</ion-content>

@@ -1,5 +1,8 @@
 {
-  "name": "TeLlevo",
-  "integrations": {},
+  "name": "tellevo",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
   "type": "angular"
 }

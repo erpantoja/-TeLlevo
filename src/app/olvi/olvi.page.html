@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar color="black">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Recuperar</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="background" scroll="true">
+    <div class="content">
+        <br>
+        <br>
+        <ion-button color="dark" size="small" (click)="inicio()">
+            <p class="signin-text">VOLVER AL INICIO</p>
+        </ion-button>
+        <div class="ion-padding">
+            <ion-input placeholder="Nombre de usuario" type="text" [(ngModel)]="dato" style="padding-left: 10px !important; font-family: 'Nunito', sans-serif; font-size: 20px;font-weight: 900;color: #000000;background-color: #f0f0f0;border-radius: 15px;"></ion-input>
+
+        </div>
+        <ion-button color="dark" class="actionbutton" expand="full" style="text-transform: none;" (click)="login()" (click)="recu()"><b>Recuperar</b></ion-button>
+
+
+    </div>
+</ion-content>

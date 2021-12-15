@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-toolbar color="black">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Usuarios Ingresados</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-card>
+    <ion-item>
+        <ion-select placeholder="Usuarios" [(ngModel)]="user">
+            <ion-select-option *ngFor="let usu for users" [value]="usu">{{usu.name}}</ion-select-option>
+        </ion-select>
+    </ion-item>
+</ion-card>

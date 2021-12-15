@@ -1,0 +1,54 @@
+.mat-radio-button~.mat-radio-button {
+    margin-left: auto;
+    text-size-adjust: small;
+}
+
+ion-content.background {
+    --background: url(../../assets/azul.jpg) 0 0/100% 100% no-repeat;
+}
+
+ion-list {
+    background-color: #ffffff00;
+}
+
+ion-title {
+    color: #080808;
+}
+
+ion-icon {
+    color: #ffffff;
+    font-size: 64px;
+    margin-top: 10px;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 20px;
+    margin: 5px;
+}
+
+mat-radio-button {
+    color: #ffffff;
+}
+
+ion-input {
+    margin-left: 5px;
+    color: #ffffff;
+}
+
+ion-button {
+    color: #ffffff;
+}
+
+ion-content {
+    #map {
+        width: 100%;
+        height: 50%;
+        opacity: 0;
+        transition: opacity 150ms ease-in;
+        display: block;
+        &.show-map {
+            opacity: 1;
+        }
+    }
+}
