@@ -6,7 +6,6 @@ import {Viajes} from '../interfaces/viajes';
 import { Time } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2';
-import { Geolocation } from '@ionic-native/geolocation/ngx';
 declare var google;
 
 interface Marker {
@@ -29,18 +28,13 @@ export class ConductorPage implements OnInit {
   horasa:Time;
   viajes:Viajes[] = [];
   map = null;
-  lat;
-  lng;
   directionsService = new google.maps.DirectionsService();
 directionsDisplay = new google.maps.DirectionsRenderer();
 origin = { lat: -33.033540814009754, lng: -71.53319486926655 }; //DUOC Viña
 
 destination = { lat: -33.00833299229633, lng: -71.54804898052983 }; // Mall Marina Viña
 
-  constructor(private http:HttpClient,private router:Router,
-     private viajesService: ViajesService, 
-     private alertCtrl:AlertController,
-     private geolocation: Geolocation) {}
+  constructor(private http:HttpClient,private router:Router, private viajesService: ViajesService, private alertCtrl:AlertController) {}
   
   showModal(){
     Swal.fire({
@@ -105,7 +99,7 @@ destination = { lat: -33.00833299229633, lng: -71.54804898052983 }; // Mall Mari
 
   }
 postViaje(){
-  let url = "http://localhost:3000/viajes"
+  let url = "https://raw.githubusercontent.com/serparram/Tellevo/main/db.json"
   this.http.post(url,{
     iniciov:this.iniciov,
     finalv:this.finalv,
@@ -117,5 +111,4 @@ postViaje(){
   }
   )
 }
-
 }
