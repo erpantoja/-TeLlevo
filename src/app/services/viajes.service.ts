@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { retry } from 'rxjs/operators';
 import { Viajes } from './../interfaces/viajes';
 
 @Injectable({
@@ -13,7 +13,9 @@ export class ViajesService {
    }
    getAllViajes() {
     const path = `${this.api}/viajes/`;
-    return this.http.get<Viajes[]>(path);
+    return this.http.get<Viajes[]>(path).pipe(
+      retry(3)
+    );
   }
 
   getViaje(id: string) {
@@ -23,11 +25,13 @@ export class ViajesService {
 
   createViaje(viaje: Viajes) {
     const path = `${this.api}/viajes`;
-    return this.http.post(path, viaje);
+    return this.http.post(path, viaje).pipe(
+      retry(3)
+    );;
   }
   deleteViaje(id: string) {
     const path = `${this.api}/viajes/${id}`;
-    return this.http.delete(path);
+    return this.http.delete(path)
   }
 }
 
