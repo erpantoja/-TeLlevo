@@ -3,6 +3,8 @@ import{Router} from '@angular/router';
 import { ViajesService } from '../services/viajes.service';
 import {Viajes} from '../interfaces/viajes';
 import Swal from 'sweetalert2';
+import { Time } from '@angular/common';
+
 declare var google;
 
 
@@ -21,14 +23,18 @@ interface Marker {
 })
 export class PasajeroPage implements OnInit {
   dato:string;
-  viajes:Viajes[] = [];
+  viajes:Viajes[];
   map = null;
   directionsService = new google.maps.DirectionsService();
 directionsDisplay = new google.maps.DirectionsRenderer();
 origin = { lat: -33.033540814009754, lng: -71.53319486926655 }; //DUOC Viña
 
 destination = { lat: -33.00833299229633, lng: -71.54804898052983 }; // Mall Marina Viña
-
+iniciov:String;
+finalv:String;
+asientos:String;
+costo:String;
+horasa:Time;
 
   constructor(private router:Router,private viajesService:ViajesService) { }
 
@@ -88,12 +94,19 @@ destination = { lat: -33.00833299229633, lng: -71.54804898052983 }; // Mall Mari
     }
     
 buscarViajes(){
-  this.viajesService.getAllViajes()
+  this.viajesService.getAllViajes2()
   .subscribe( viajes =>{
     console.log(viajes);
     this.viajes = viajes;
   })
 }
-
-
+ObtenerData(){
+  return this.viajesService.data
 }
+}
+
+
+
+
+
+

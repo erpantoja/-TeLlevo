@@ -1,6 +1,7 @@
+import { Time } from "@angular/common";
 
 export interface Viajes {
-    id?:string;
+    id?:number;
     iniciov: string;
     finalv: string;
     costo: string;

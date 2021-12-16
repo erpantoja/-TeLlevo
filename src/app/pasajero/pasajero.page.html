@@ -16,7 +16,7 @@
     <div id="map"></div>
     <ion-list>
 
-        <ion-item color='black' *ngFor="let viaje of viajes">
+        <ion-item color='black' *ngFor="let viaje of data">
             <ul>DESDE:
                 <li>{{viaje.iniciov}}</li>
                 HACIA:
@@ -31,5 +31,5 @@
             </ul>
         </ion-item>
     </ion-list>
-    <ion-button (click)="buscarViajes()">Buscar Viajes</ion-button>
+    <ion-button (click)="buscarViajes()" (click)="ObtenerData()">Buscar Viajes</ion-button>
 </ion-content>
